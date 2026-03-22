@@ -1,0 +1,49 @@
+extends CharacterBody2D
+
+@onready var coyote_timer = $CoyoteTimer
+@onready var wall_cling_right = $WallClingRight
+@onready var wall_cling_left = $WallClingLeft
+
+const SPEED = 300.0
+const JUMP_VELOCITY = -500.0
+const FRICTION = 75
+const AIR_RESISTANCE = 5
+
+var direction = 0
+var just_jumped = false
+var coyote_time = false
+
+func _physics_process(delta):
+	# Add the gravity.
+	if not is_on_floor():
+		# Extend height of jump if input is held
+		if Input.is_action_pressed("jump") and velocity.y <= 0:
+			velocity += get_gravity() * delta * 0.75
+		elif ((wall_cling_right.is_colliding() and direction > 0) or (wall_cling_left.is_colliding() and direction < 0)) and velocity.y > 0:
+			velocity += get_gravity() * delta * 0.2
+		else:
+			velocity += get_gravity() * delta
+		# Start coyote time
+		if not just_jumped and not coyote_time:
+			coyote_timer.start()
+			coyote_time = true
+	else:
+		just_jumped = false
+		coyote_time = false
+	
+	# Handle jump.
+	if Input.is_action_just_pressed("jump") and (is_on_floor() or coyote_timer.time_left > 0):
+		velocity.y = JUMP_VELOCITY
+		just_jumped = true
+		coyote_timer.stop()
+	
+	# Get the input direction and handle the movement/deceleration.
+	direction = Input.get_axis("move_left", "move_right")
+	if direction:
+			velocity.x = direction * SPEED 
+	elif is_on_floor():
+		velocity.x = move_toward(velocity.x, 0, FRICTION)
+	else:
+		velocity.x = move_toward(velocity.x, 0, AIR_RESISTANCE)
+
+	move_and_slide()

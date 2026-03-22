@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://h43dic7lfrv1"]
+
+[ext_resource type="Script" uid="uid://dtmdu0mi513cy" path="res://scripts/polygon_level.gd" id="1_2venv"]
+[ext_resource type="PackedScene" uid="uid://bdw1uarwohnlv" path="res://scenes/player.tscn" id="2_paw1w"]
+
+[node name="TestLevel" type="Node2D" unique_id=1367311919]
+
+[node name="PolygonLevel" type="StaticBody2D" parent="." unique_id=341449632]
+script = ExtResource("1_2venv")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PolygonLevel" unique_id=1995965976]
+build_mode = 1
+polygon = PackedVector2Array(-1472, -544, -1472, 544, 960, 544, 960, -544, 896, -544, 896, 192, 384, 192, 384, 352, 256, 352, 256, 480, -320, 480, -448, 448, -576, 384, -704, 288, -832, 160, -896, 32, -1408, 32, -1408, -544)
+
+[node name="Polygon2D" type="Polygon2D" parent="PolygonLevel" unique_id=2112811396]
+
+[node name="Player" parent="." unique_id=1701566851 instance=ExtResource("2_paw1w")]
+position = Vector2(528, 128)
