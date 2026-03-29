@@ -4,10 +4,11 @@ extends CharacterBody2D
 @onready var wall_cling_right = $WallClingRight
 @onready var wall_cling_left = $WallClingLeft
 
-const SPEED = 300.0
-const JUMP_VELOCITY = -500.0
-const FRICTION = 75
-const AIR_RESISTANCE = 5
+const SPEED = 150.0
+const AIR_CONTROL = 5
+const JUMP_VELOCITY = -300.0
+const FRICTION = 37.5
+const AIR_RESISTANCE = 2.5
 
 var direction = 0
 var just_jumped = false
@@ -40,10 +41,19 @@ func _physics_process(delta):
 	# Get the input direction and handle the movement/deceleration.
 	direction = Input.get_axis("move_left", "move_right")
 	if direction:
-			velocity.x = direction * SPEED 
+			if is_on_floor():
+				velocity.x = direction * SPEED 
+			else:
+				if (velocity.x < SPEED and direction > 0) or (velocity.x > -SPEED and direction < 0):
+					velocity.x += direction * AIR_CONTROL
+
 	elif is_on_floor():
 		velocity.x = move_toward(velocity.x, 0, FRICTION)
 	else:
 		velocity.x = move_toward(velocity.x, 0, AIR_RESISTANCE)
 
 	move_and_slide()
+
+
+func _on_death_barrier_body_entered(body):
+	position = Vector2(0, 0)
