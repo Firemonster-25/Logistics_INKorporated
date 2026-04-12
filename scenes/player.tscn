@@ -1,26 +1,33 @@
 [gd_scene format=3 uid="uid://bdw1uarwohnlv"]
 
 [ext_resource type="Script" uid="uid://ckjibf1bgq34c" path="res://scripts/player.gd" id="1_g2els"]
-[ext_resource type="Texture2D" uid="uid://c2o3l446m5p77" path="res://assets/test_tilemap.png" id="2_g2els"]
+[ext_resource type="Texture2D" uid="uid://6cxjktmte5ou" path="res://assets/test_tilemap_2.png" id="2_g2els"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dqkch"]
+radius = 16.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qhqgy"]
 atlas = ExtResource("2_g2els")
 region = Rect2(192, 64, 32, 32)
 filter_clip = true
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_dqkch"]
-radius = 16.0
-
 [node name="Player" type="CharacterBody2D" unique_id=1701566851]
-collision_mask = 7
+collision_mask = 2
 floor_snap_length = 3.0
 script = ExtResource("1_g2els")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=943583525]
-texture = SubResource("AtlasTexture_qhqgy")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1396079487]
 shape = SubResource("CircleShape2D_dqkch")
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=1419352427]
+collision_layer = 0
+collision_mask = 12
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=914110478]
+shape = SubResource("CircleShape2D_dqkch")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=943583525]
+texture = SubResource("AtlasTexture_qhqgy")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1397783452]
 zoom = Vector2(2, 2)
@@ -39,3 +46,5 @@ collision_mask = 2
 [node name="CoyoteTimer" type="Timer" parent="." unique_id=207375749]
 wait_time = 0.1
 one_shot = true
+
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]

@@ -11,10 +11,14 @@ config_version=5
 [application]
 
 config/name="Puzzle Platformer"
-config/version="0.0.2"
-run/main_scene="uid://h43dic7lfrv1"
+config/version="0.0.3"
+run/main_scene="uid://d0borr8rdp2gx"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+game_manager="*uid://doqua4j324vql"
 
 [display]
 

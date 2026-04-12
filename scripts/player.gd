@@ -54,6 +54,8 @@ func _physics_process(delta):
 
 	move_and_slide()
 
-
 func _on_death_barrier_body_entered(body):
+	position = Vector2(0, 0)
+
+func _on_hitbox_area_entered(area):
 	position = Vector2(0, 0)

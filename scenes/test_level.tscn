@@ -1,141 +1,8 @@
 [gd_scene format=4 uid="uid://h43dic7lfrv1"]
 
-[ext_resource type="Texture2D" uid="uid://c2o3l446m5p77" path="res://assets/test_tilemap.png" id="2_j6w7d"]
+[ext_resource type="PackedScene" uid="uid://dmepv4gxekg0l" path="res://scenes/test_tilemap.tscn" id="2_j6w7d"]
 [ext_resource type="PackedScene" uid="uid://bdw1uarwohnlv" path="res://scenes/player.tscn" id="2_paw1w"]
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x4b8f"]
-texture = ExtResource("2_j6w7d")
-texture_region_size = Vector2i(32, 32)
-0:0/0 = 0
-0:0/0/terrain_set = 0
-0:0/0/terrain = 0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
-0:0/0/terrains_peering_bit/right_side = 0
-0:0/0/terrains_peering_bit/bottom_right_corner = 0
-0:0/0/terrains_peering_bit/bottom_side = 0
-0:1/0 = 0
-0:1/0/terrain_set = 0
-0:1/0/terrain = 0
-0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
-0:1/0/terrains_peering_bit/right_side = 0
-0:1/0/terrains_peering_bit/bottom_right_corner = 0
-0:1/0/terrains_peering_bit/bottom_side = 0
-0:1/0/terrains_peering_bit/top_side = 0
-0:1/0/terrains_peering_bit/top_right_corner = 0
-0:2/0 = 0
-0:2/0/terrain_set = 0
-0:2/0/terrain = 0
-0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
-0:2/0/terrains_peering_bit/right_side = 0
-0:2/0/terrains_peering_bit/top_side = 0
-0:2/0/terrains_peering_bit/top_right_corner = 0
-1:2/0 = 0
-1:2/0/terrain_set = 0
-1:2/0/terrain = 0
-1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
-1:2/0/terrains_peering_bit/right_side = 0
-1:2/0/terrains_peering_bit/left_side = 0
-1:2/0/terrains_peering_bit/top_left_corner = 0
-1:2/0/terrains_peering_bit/top_side = 0
-1:2/0/terrains_peering_bit/top_right_corner = 0
-1:1/0 = 0
-1:1/0/terrain_set = 0
-1:1/0/terrain = 0
-1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
-1:1/0/terrains_peering_bit/right_side = 0
-1:1/0/terrains_peering_bit/bottom_right_corner = 0
-1:1/0/terrains_peering_bit/bottom_side = 0
-1:1/0/terrains_peering_bit/bottom_left_corner = 0
-1:1/0/terrains_peering_bit/left_side = 0
-1:1/0/terrains_peering_bit/top_left_corner = 0
-1:1/0/terrains_peering_bit/top_side = 0
-1:1/0/terrains_peering_bit/top_right_corner = 0
-1:0/0 = 0
-1:0/0/terrain_set = 0
-1:0/0/terrain = 0
-1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
-1:0/0/terrains_peering_bit/right_side = 0
-1:0/0/terrains_peering_bit/bottom_right_corner = 0
-1:0/0/terrains_peering_bit/bottom_side = 0
-1:0/0/terrains_peering_bit/bottom_left_corner = 0
-1:0/0/terrains_peering_bit/left_side = 0
-2:0/0 = 0
-2:0/0/terrain_set = 0
-2:0/0/terrain = 0
-2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
-2:0/0/terrains_peering_bit/bottom_side = 0
-2:0/0/terrains_peering_bit/bottom_left_corner = 0
-2:0/0/terrains_peering_bit/left_side = 0
-2:1/0 = 0
-2:1/0/terrain_set = 0
-2:1/0/terrain = 0
-2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
-2:1/0/terrains_peering_bit/bottom_side = 0
-2:1/0/terrains_peering_bit/bottom_left_corner = 0
-2:1/0/terrains_peering_bit/left_side = 0
-2:1/0/terrains_peering_bit/top_left_corner = 0
-2:1/0/terrains_peering_bit/top_side = 0
-2:2/0 = 0
-2:2/0/terrain_set = 0
-2:2/0/terrain = 0
-2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
-2:2/0/terrains_peering_bit/left_side = 0
-2:2/0/terrains_peering_bit/top_left_corner = 0
-2:2/0/terrains_peering_bit/top_side = 0
-3:2/0 = 0
-3:2/0/terrain_set = 0
-3:2/0/terrain = 0
-3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
-3:2/0/terrains_peering_bit/top_side = 0
-3:1/0 = 0
-3:1/0/terrain_set = 0
-3:1/0/terrain = 0
-3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
-3:1/0/terrains_peering_bit/bottom_side = 0
-3:1/0/terrains_peering_bit/top_side = 0
-3:0/0 = 0
-3:0/0/terrain_set = 0
-3:0/0/terrain = 0
-3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
-3:0/0/terrains_peering_bit/bottom_side = 0
-4:0/0 = 0
-4:0/0/terrain_set = 0
-4:0/0/terrain = 0
-4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
-4:1/0 = 0
-4:1/0/terrain_set = 0
-4:1/0/terrain = 0
-4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
-4:1/0/terrains_peering_bit/right_side = 0
-4:2/0 = 0
-4:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16)
-5:2/0 = 0
-5:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, -16, 16)
-5:1/0 = 0
-5:1/0/terrain_set = 0
-5:1/0/terrain = 0
-5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
-5:1/0/terrains_peering_bit/right_side = 0
-5:1/0/terrains_peering_bit/left_side = 0
-6:1/0 = 0
-6:1/0/terrain_set = 0
-6:1/0/terrain = 0
-6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
-6:1/0/terrains_peering_bit/left_side = 0
-5:0/0 = 0
-5:0/0/terrain_set = 0
-5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, -16, 16, 16, -16, 16)
-6:0/0 = 0
-6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, 16, -16, 16)
-
-[sub_resource type="TileSet" id="TileSet_tmr53"]
-tile_size = Vector2i(32, 32)
-physics_layer_0/collision_layer = 2
-physics_layer_0/collision_mask = 0
-terrain_set_0/mode = 0
-terrain_set_0/terrain_0/name = "Test Level"
-terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
-sources/1 = SubResource("TileSetAtlasSource_x4b8f")
+[ext_resource type="PackedScene" uid="uid://c2hqi1ulpjnki" path="res://scenes/exit_door.tscn" id="3_j6w7d"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_paw1w"]
 distance = -160.0
@@ -144,17 +11,16 @@ distance = -160.0
 
 [node name="Player" parent="." unique_id=1701566851 instance=ExtResource("2_paw1w")]
 
-[node name="Level" type="TileMapLayer" parent="." unique_id=968402470]
-use_parent_material = true
-position = Vector2(1, 0)
-tile_map_data = PackedByteArray("AAD//wEAAQABAAAAAAAAAAEAAQABAAAAAAAAAAIAAQABAAEAAAD//wIAAQABAAEAAAD+/wIAAQABAAEAAAD9/wIAAQAAAAEAAAD+/wEAAQABAAEAAAD+/wAAAQACAAEAAAD+////AQACAAEAAAD+//7/AQACAAEAAAD+//3/AQACAAEAAAD+//z/AQACAAEAAAD9//z/AQAAAAEAAAD9//3/AQAAAAEAAAD9//7/AQAAAAEAAAD9////AQAAAAEAAAD9/wAAAQAAAAEAAAD9/wEAAQAAAAEAAAD9//v/AQAAAAEAAAD+//v/AQACAAEAAAD+//r/AQACAAAAAAD9//r/AQAAAAAAAAABAAIAAQABAAEAAAACAAIAAQABAAAAAAADAAIAAQABAAAAAAAEAAIAAQACAAAAAAD9/wMAAQAAAAEAAAD+/wMAAQABAAEAAAD//wMAAQABAAEAAAAAAAMAAQABAAEAAAACAAMAAQABAAEAAAABAAMAAQABAAEAAAADAAMAAQABAAEAAAAEAAMAAQACAAEAAAAHAAMAAQAAAAEAAAAIAAMAAQABAAEAAAAJAAMAAQABAAEAAAAKAAMAAQABAAEAAAAKAAIAAQABAAEAAAAJAAIAAQABAAEAAAAIAAIAAQABAAAAAAAHAAIAAQAAAAAAAAALAAMAAQABAAEAAAALAAIAAQABAAEAAAALAAEAAQABAAEAAAAKAAEAAQABAAEAAAALAAAAAQABAAEAAAAMAP//AQACAAAAAAAMAAAAAQACAAEAAAAMAAEAAQACAAEAAAAMAAIAAQACAAEAAAAMAAMAAQACAAEAAAD9/wQAAQAAAAIAAAD+/wQAAQABAAIAAAD//wQAAQABAAIAAAAAAAQAAQABAAIAAAABAAQAAQABAAIAAAACAAQAAQABAAIAAAADAAQAAQABAAIAAAAEAAQAAQACAAIAAAAHAAQAAQAAAAIAAAAIAAQAAQABAAIAAAAJAAQAAQABAAIAAAAKAAQAAQABAAIAAAALAAQAAQABAAIAAAAMAAQAAQACAAIAAAAJAAEAAQAFAAAAAAAKAAAAAQAFAAAAAAALAP//AQAFAAAAAAABAAEAAQAGAAAAAAAPAP//AQAEAAEAAAAQAP//AQAGAAEAAAATAP3/AQAFAAAAAAAUAP3/AQACAAAAAAAUAP7/AQACAAIAAAATAP7/AQAAAAIAAAAXAP3/AQAAAAAAAAAXAP7/AQAAAAEAAAAXAP//AQAAAAEAAAAXAAAAAQAAAAEAAAAXAAEAAQAAAAEAAAAXAAIAAQAAAAEAAAAXAAMAAQAAAAEAAAAXAAQAAQAAAAIAAAAYAAQAAQABAAIAAAAYAAMAAQABAAEAAAAYAAIAAQABAAEAAAAYAAEAAQABAAEAAAAYAAAAAQABAAEAAAAYAP//AQABAAEAAAAYAP7/AQABAAEAAAAYAP3/AQABAAAAAAAZAP3/AQABAAEAAAAZAP7/AQABAAEAAAAZAP//AQABAAEAAAAZAAAAAQABAAEAAAAZAAEAAQABAAEAAAAZAAIAAQABAAEAAAAZAAMAAQABAAEAAAAZAAQAAQABAAIAAAAaAAQAAQABAAIAAAAaAAMAAQABAAEAAAAaAAIAAQABAAEAAAAaAAEAAQABAAEAAAAaAAAAAQABAAEAAAAaAP//AQABAAEAAAAaAP7/AQABAAEAAAAaAP3/AQABAAEAAAAaAPz/AQABAAAAAAAbAPz/AQACAAAAAAAbAP3/AQACAAEAAAAbAP7/AQACAAEAAAAbAP//AQACAAEAAAAbAAAAAQACAAEAAAAbAAEAAQACAAEAAAAbAAIAAQACAAEAAAAbAAMAAQACAAEAAAAbAAQAAQACAAIAAAAZAPz/AQAFAAAAAAAfAPz/AQAEAAAAAAAjAPz/AQAAAAAAAAAjAP3/AQAAAAEAAAAjAP7/AQAAAAEAAAAjAP//AQAAAAEAAAAjAAAAAQAAAAEAAAAjAAEAAQAAAAEAAAAjAAIAAQAAAAEAAAAjAAMAAQAAAAEAAAAjAAQAAQAAAAIAAAAkAAQAAQABAAIAAAAlAAQAAQABAAIAAAAlAAMAAQABAAEAAAAlAAIAAQABAAEAAAAkAAMAAQABAAEAAAAkAAIAAQABAAEAAAAkAAEAAQABAAEAAAAkAAAAAQABAAEAAAAkAP//AQABAAEAAAAkAP7/AQABAAEAAAAkAP3/AQABAAEAAAAkAPz/AQABAAAAAAAlAPz/AQABAAAAAAAlAP3/AQABAAEAAAAlAP7/AQABAAEAAAAlAP//AQABAAEAAAAlAAAAAQABAAEAAAAlAAEAAQABAAEAAAAmAAQAAQABAAIAAAAmAAMAAQABAAEAAAAmAAIAAQABAAEAAAAmAAEAAQABAAEAAAAmAAAAAQABAAEAAAAmAP//AQABAAEAAAAmAP7/AQABAAEAAAAmAP3/AQABAAEAAAAmAPz/AQABAAEAAAAmAPv/AQAAAAEAAAAmAPr/AQAAAAEAAAAmAPn/AQAAAAEAAAAmAPj/AQAAAAEAAAAmAPf/AQAAAAEAAAAmAPb/AQAAAAEAAAAnAPb/AQACAAEAAAAnAPf/AQACAAEAAAAnAPj/AQACAAEAAAAnAPn/AQACAAEAAAAnAPr/AQACAAEAAAAnAPv/AQACAAEAAAAnAPz/AQACAAEAAAAnAP3/AQACAAEAAAAnAP7/AQACAAEAAAAnAP//AQACAAEAAAAnAAAAAQACAAEAAAAnAAEAAQACAAEAAAAnAAIAAQACAAEAAAAnAAMAAQACAAEAAAAnAAQAAQACAAIAAAAmAPX/AQAAAAAAAAAnAPX/AQACAAAAAAA=")
-tile_set = SubResource("TileSet_tmr53")
+[node name="Level" parent="." unique_id=797331556 instance=ExtResource("2_j6w7d")]
+tile_map_data = PackedByteArray("AAD+//j/AAACAAEAAAD+//n/AAACAAEAAAD+//r/AAACAAEAAAD+//v/AAACAAEAAAD+//z/AAACAAEAAAD+//3/AAACAAEAAAD+//7/AAACAAEAAAD+////AAACAAEAAAD+/wAAAAACAAEAAAD+/wEAAAABAAEAAAD+/wIAAAABAAEAAAD//wEAAAABAAAAAAAAAAEAAAABAAAAAAAAAAIAAAABAAEAAAD//wIAAAABAAEAAAD9/wIAAAAAAAEAAAD9/wEAAAAAAAEAAAD9/wAAAAAAAAEAAAD9////AAAAAAEAAAD9//7/AAAAAAEAAAD9//3/AAAAAAEAAAD9//z/AAAAAAEAAAD9//v/AAAAAAEAAAD9//r/AAAAAAEAAAD9//n/AAAAAAEAAAD9//j/AAAAAAEAAAABAAEAAAABAAAAAAABAAIAAAABAAEAAAACAAIAAAABAAAAAAADAAIAAAABAAAAAAAEAAIAAAACAAAAAAAEAAMAAAACAAEAAAADAAMAAAABAAEAAAACAAMAAAABAAEAAAABAAMAAAABAAEAAAAAAAMAAAABAAEAAAD//wMAAAABAAEAAAD+/wMAAAABAAEAAAD9/wMAAAAAAAEAAAD9/wQAAAAAAAIAAAD+/wQAAAABAAIAAAD//wQAAAABAAIAAAAAAAQAAAABAAIAAAABAAQAAAABAAIAAAACAAQAAAABAAIAAAADAAQAAAABAAIAAAAEAAQAAAACAAIAAAAIAAIAAAAAAAAAAAAIAAMAAAAAAAEAAAAIAAQAAAAAAAIAAAAJAAQAAAABAAIAAAAKAAQAAAACAAIAAAAKAAMAAAACAAEAAAAKAAIAAAACAAAAAAAJAAIAAAABAAAAAAAJAAMAAAABAAEAAAANAAEAAAAAAAIAAAAOAAEAAAACAAIAAAAOAAAAAAACAAAAAAARAAAAAAAAAAAAAAARAAEAAAAAAAIAAAASAAEAAAACAAIAAAASAAAAAAACAAAAAAAWAAIAAAAAAAEAAAAWAAMAAAAAAAEAAAAWAAQAAAAAAAIAAAAXAAQAAAABAAIAAAAYAAQAAAABAAIAAAAYAAMAAAABAAEAAAAYAAIAAAABAAEAAAAXAAIAAAABAAEAAAAXAAMAAAABAAEAAAAZAAIAAAABAAEAAAAZAAMAAAABAAEAAAAZAAQAAAABAAIAAAAaAAQAAAACAAIAAAAaAAMAAAACAAEAAAAaAAIAAAACAAEAAAAXAAEAAAABAAEAAAAYAAEAAAABAAEAAAAZAAEAAAABAAEAAAAZAAAAAAABAAEAAAAaAAEAAAACAAEAAAAaAAAAAAACAAEAAAAYAAAAAAABAAEAAAAZAP//AAABAAEAAAAaAP//AAACAAEAAAAaAP7/AAACAAAAAAAeAP7/AAAEAAAAAAAiAP7/AAAAAAAAAAAjAP7/AAABAAAAAAAkAP7/AAABAAAAAAAlAP7/AAABAAEAAAAmAP7/AAACAAEAAAAmAP//AAACAAEAAAAmAAAAAAACAAEAAAAmAAEAAAACAAEAAAAmAAIAAAACAAEAAAAmAAMAAAACAAEAAAAmAAQAAAACAAIAAAAlAAQAAAABAAIAAAAkAAQAAAABAAIAAAAjAAQAAAABAAIAAAAiAAQAAAAAAAIAAAAiAAMAAAAAAAEAAAAiAAIAAAAAAAEAAAAiAAEAAAAAAAEAAAAiAAAAAAAAAAEAAAAiAP//AAAAAAEAAAAjAP//AAABAAEAAAAkAP//AAABAAEAAAAlAP//AAABAAEAAAAkAAAAAAABAAEAAAAjAAAAAAABAAEAAAAkAAEAAAABAAEAAAAlAAAAAAABAAEAAAAlAAEAAAABAAEAAAAlAAIAAAABAAEAAAAkAAIAAAABAAEAAAAjAAEAAAABAAEAAAAjAAIAAAABAAEAAAAkAAMAAAABAAEAAAAlAAMAAAABAAEAAAAjAAMAAAABAAEAAAAlAP3/AAAAAAEAAAAlAPz/AAAAAAEAAAAlAPv/AAAAAAEAAAAlAPr/AAAAAAEAAAAmAPr/AAACAAEAAAAmAPn/AAACAAEAAAAmAPj/AAACAAEAAAAmAPf/AAACAAEAAAAlAPf/AAAAAAEAAAAlAPb/AAAAAAEAAAAlAPX/AAAAAAEAAAAlAPj/AAAAAAEAAAAlAPn/AAAAAAEAAAAmAPb/AAACAAEAAAAmAPX/AAACAAEAAAAmAPv/AAACAAEAAAAmAPz/AAACAAEAAAAmAP3/AAACAAEAAAAlAPT/AAAAAAEAAAAlAPP/AAAAAAAAAAAmAPP/AAACAAAAAAAmAPT/AAACAAEAAAD+//f/AAACAAEAAAD9//f/AAAAAAEAAAD9//b/AAAAAAAAAAD+//b/AAACAAAAAAACAAEAAAAGAAAAAAANAAAAAAAFAAAAAAAWAAEAAAAFAAAAAAAXAAAAAAAFAAAAAAAYAP//AAAFAAAAAAAZAP7/AAAFAAAAAAA=")
 
 [node name="DeathBarrier" type="Area2D" parent="." unique_id=1675626222]
 collision_layer = 0
-monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathBarrier" unique_id=926471037]
 shape = SubResource("WorldBoundaryShape2D_paw1w")
+
+[node name="ExitDoor" parent="." unique_id=565467227 instance=ExtResource("3_j6w7d")]
+position = Vector2(1136, -96)
 
 [connection signal="body_entered" from="DeathBarrier" to="Player" method="_on_death_barrier_body_entered"]
