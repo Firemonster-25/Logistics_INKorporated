@@ -1,3 +1,4 @@
 extends Node
 
-var next_level = preload("res://scenes/test_level_2.tscn")
+var next_level: String
+var respawn_point = Vector2(0, 0)

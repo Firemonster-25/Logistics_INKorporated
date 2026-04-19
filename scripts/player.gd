@@ -15,7 +15,21 @@ var just_jumped = false
 var coyote_time = false
 
 func _physics_process(delta):
-	# Add the gravity.
+	apply_gravity(delta)
+	
+	handle_jump()
+	
+	handle_movement()
+	
+	move_and_slide()
+
+func _on_hitbox_area_entered(area):
+	position = game_manager.respawn_point
+
+func _on_death_barrier_body_entered(body):
+	position = game_manager.respawn_point
+
+func apply_gravity(delta):
 	if not is_on_floor():
 		# Extend height of jump if input is held
 		if Input.is_action_pressed("jump") and velocity.y <= 0:
@@ -31,14 +45,14 @@ func _physics_process(delta):
 	else:
 		just_jumped = false
 		coyote_time = false
-	
-	# Handle jump.
+
+func handle_jump():
 	if Input.is_action_just_pressed("jump") and (is_on_floor() or coyote_timer.time_left > 0):
 		velocity.y = JUMP_VELOCITY
 		just_jumped = true
 		coyote_timer.stop()
-	
-	# Get the input direction and handle the movement/deceleration.
+
+func handle_movement():
 	direction = Input.get_axis("move_left", "move_right")
 	if direction:
 			if is_on_floor():
@@ -46,16 +60,7 @@ func _physics_process(delta):
 			else:
 				if (velocity.x < SPEED and direction > 0) or (velocity.x > -SPEED and direction < 0):
 					velocity.x += direction * AIR_CONTROL
-
 	elif is_on_floor():
 		velocity.x = move_toward(velocity.x, 0, FRICTION)
 	else:
 		velocity.x = move_toward(velocity.x, 0, AIR_RESISTANCE)
-
-	move_and_slide()
-
-func _on_death_barrier_body_entered(body):
-	position = Vector2(0, 0)
-
-func _on_hitbox_area_entered(area):
-	position = Vector2(0, 0)

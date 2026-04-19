@@ -136,6 +136,6 @@ terrain_set_0/terrain_0/name = "Test Level"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 sources/0 = SubResource("TileSetAtlasSource_nuqst")
 
-[node name="Level" type="TileMapLayer" unique_id=797331556]
+[node name="TestTilemap" type="TileMapLayer" unique_id=797331556]
 use_parent_material = true
 tile_set = SubResource("TileSet_a13gu")

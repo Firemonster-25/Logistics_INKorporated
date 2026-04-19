@@ -1,6 +1,6 @@
 extends Control
 
-var first_level = preload("res://scenes/test_level.tscn")
+var first_level = preload("res://scenes/test_level_1.tscn")
 
 func _on_start_pressed():
 	get_tree().change_scene_to_packed(first_level)
