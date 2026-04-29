@@ -1,35 +1,35 @@
 [gd_scene format=3 uid="uid://bdw1uarwohnlv"]
 
 [ext_resource type="Script" uid="uid://ckjibf1bgq34c" path="res://scripts/player.gd" id="1_g2els"]
-[ext_resource type="Texture2D" uid="uid://6cxjktmte5ou" path="res://assets/test_tilemap_2.png" id="2_g2els"]
+[ext_resource type="Texture2D" uid="uid://dprvjjk6praog" path="res://assets/test_player.png" id="2_g2els"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_dqkch"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qhqgy"]
 radius = 16.0
+height = 62.0
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qhqgy"]
-atlas = ExtResource("2_g2els")
-region = Rect2(192, 64, 32, 32)
-filter_clip = true
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dqkch"]
+radius = 16.0
+height = 62.0
 
-[node name="Player" type="CharacterBody2D" unique_id=1701566851]
-collision_mask = 2
+[node name="Player" type="CharacterBody2D" unique_id=1034434987]
+collision_mask = 10
 floor_snap_length = 3.0
 script = ExtResource("1_g2els")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1396079487]
-shape = SubResource("CircleShape2D_dqkch")
+shape = SubResource("CapsuleShape2D_qhqgy")
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=1419352427]
 collision_layer = 0
 collision_mask = 12
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=914110478]
-shape = SubResource("CircleShape2D_dqkch")
+shape = SubResource("CapsuleShape2D_dqkch")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=943583525]
-texture = SubResource("AtlasTexture_qhqgy")
+texture = ExtResource("2_g2els")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1397783452]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1223178397]
 zoom = Vector2(2, 2)
 process_callback = 0
 position_smoothing_enabled = true

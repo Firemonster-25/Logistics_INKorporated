@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://c1oavcobkgy8b"]
+
+[ext_resource type="Texture2D" uid="uid://bm51dmrdkbugo" path="res://assets/test_puzzle_objects.png" id="1_3inec"]
+[ext_resource type="Script" uid="uid://t1aiy4b28ilj" path="res://scripts/box.gd" id="1_ks2v0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ks2v0"]
+size = Vector2(32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c2ln5"]
+atlas = ExtResource("1_3inec")
+region = Rect2(0, 0, 32, 32)
+filter_clip = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c2ln5"]
+size = Vector2(4, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_telwu"]
+size = Vector2(4, 28)
+
+[node name="Box" type="CharacterBody2D" unique_id=1064837909]
+collision_layer = 8
+collision_mask = 11
+floor_snap_length = 3.0
+script = ExtResource("1_ks2v0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=500076023]
+shape = SubResource("RectangleShape2D_ks2v0")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1827704499]
+texture = SubResource("AtlasTexture_c2ln5")
+
+[node name="PushRight" type="Area2D" parent="." unique_id=173823700]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PushRight" unique_id=1603770659]
+position = Vector2(-18, 2)
+shape = SubResource("RectangleShape2D_c2ln5")
+
+[node name="PushLeft" type="Area2D" parent="." unique_id=1348340847]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PushLeft" unique_id=26838284]
+position = Vector2(18, 2)
+shape = SubResource("RectangleShape2D_telwu")
+
+[connection signal="body_entered" from="PushRight" to="." method="_on_push_right_body_entered"]
+[connection signal="body_exited" from="PushRight" to="." method="_on_push_right_body_exited"]
+[connection signal="body_entered" from="PushLeft" to="." method="_on_push_left_body_entered"]
+[connection signal="body_exited" from="PushLeft" to="." method="_on_push_left_body_exited"]

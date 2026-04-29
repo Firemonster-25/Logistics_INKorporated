@@ -3,6 +3,7 @@ extends CharacterBody2D
 @onready var coyote_timer = $CoyoteTimer
 @onready var wall_cling_right = $WallClingRight
 @onready var wall_cling_left = $WallClingLeft
+@onready var camera_2d = $Camera2D
 
 const SPEED = 150.0
 const AIR_CONTROL = 5
@@ -21,7 +22,10 @@ func _physics_process(delta):
 	
 	handle_movement()
 	
+	change_colour()
+	
 	move_and_slide()
+
 
 func _on_hitbox_area_entered(area):
 	position = game_manager.respawn_point
@@ -64,3 +68,7 @@ func handle_movement():
 		velocity.x = move_toward(velocity.x, 0, FRICTION)
 	else:
 		velocity.x = move_toward(velocity.x, 0, AIR_RESISTANCE)
+
+func change_colour():
+	if game_manager.current_colour == "Green":
+		modulate = Color(0.0, 0.5, 0.0, 1.0) 

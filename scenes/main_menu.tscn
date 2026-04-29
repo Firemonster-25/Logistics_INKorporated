@@ -19,7 +19,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="Title" type="Label" parent="VBoxContainer" unique_id=1861910879]
 layout_mode = 2
@@ -31,6 +30,22 @@ layout_mode = 2
 size_flags_horizontal = 4
 text = "Start"
 
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=2011300367]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="LevelSelection" type="TextEdit" parent="VBoxContainer/HBoxContainer" unique_id=536242381]
+custom_minimum_size = Vector2(100, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+placeholder_text = "Level ID"
+
+[node name="Load" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=1742453312]
+layout_mode = 2
+text = "Load"
+
 [node name="Quit" type="Button" parent="VBoxContainer" unique_id=1600550391]
 layout_mode = 2
 size_flags_horizontal = 4
@@ -38,4 +53,5 @@ text = "Quit"
 
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="toggled" from="VBoxContainer/Start" to="." method="_on_start_toggled"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Load" to="." method="_on_load_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]

@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://cspwbm0xwnguw"]
+
+[ext_resource type="Script" uid="uid://cbvca6tb2amlq" path="res://scripts/colour_pipe.gd" id="1_vyxtu"]
+[ext_resource type="Texture2D" uid="uid://ci2yypsl4dlkw" path="res://assets/colour_pipe.png" id="2_ysc04"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f0eow"]
+size = Vector2(20, 64)
+
+[node name="ColourPipe" type="Area2D" unique_id=1576936451]
+collision_layer = 0
+script = ExtResource("1_vyxtu")
+colour = "Green"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=120559123]
+texture = ExtResource("2_ysc04")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1493675290]
+shape = SubResource("RectangleShape2D_f0eow")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
