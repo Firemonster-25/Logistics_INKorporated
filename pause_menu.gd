@@ -11,7 +11,6 @@ func _process(delta):
 func _on_continue_pressed():
 	hide()
 	get_tree().paused = false
-	
 
 func _on_restart_level_pressed():
 	get_tree().paused = false

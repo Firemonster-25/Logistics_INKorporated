@@ -19,10 +19,9 @@ func _ready():
 
 func _physics_process(delta):
 	smooth_camera()
-	pause_menu.set_position(camera_2d.position)
 
 func smooth_camera():
 	x_ratio = abs((camera_2d.position.x - player.position.x)/75)
 	y_ratio = abs((camera_2d.position.y - player.position.y)/75)
-	camera_2d.position.x = move_toward(camera_2d.position.x, player.position.x, 3 * clampf(x_ratio, 1, 10))
-	camera_2d.position.y = move_toward(camera_2d.position.y, player.position.y, 3 * clampf(y_ratio, 1, 10))
+	camera_2d.position.x = move_toward(camera_2d.position.x, player.position.x, 3 * clampf(x_ratio, 0.75, 10))
+	camera_2d.position.y = move_toward(camera_2d.position.y, player.position.y, 3 * clampf(y_ratio, 0.75, 10))

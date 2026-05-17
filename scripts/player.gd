@@ -4,6 +4,7 @@ extends CharacterBody2D
 @onready var wall_cling_right = $WallClingRight
 @onready var wall_cling_left = $WallClingLeft
 @onready var camera_2d = $Camera2D
+@onready var sprite_2d = $Sprite2D
 
 const SPEED = 150.0
 const AIR_CONTROL = 5
@@ -14,7 +15,7 @@ const AIR_RESISTANCE = 2.5
 var direction = 0
 var just_jumped = false
 var coyote_time = false
-
+var previous_colour: String
 func _physics_process(delta):
 	apply_gravity(delta)
 	
@@ -70,5 +71,13 @@ func handle_movement():
 		velocity.x = move_toward(velocity.x, 0, AIR_RESISTANCE)
 
 func change_colour():
-	if game_manager.current_colour == "Green":
-		modulate = Color(0.0, 0.5, 0.0, 1.0) 
+	if previous_colour != game_manager.current_colour:
+		if not game_manager.current_colour:
+			sprite_2d.texture.region = Rect2(0, 0, 32, 64)
+		if game_manager.current_colour == "Red":
+			sprite_2d.texture.region = Rect2(32, 0, 32, 64)
+		if game_manager.current_colour == "Green":
+			sprite_2d.texture.region = Rect2(64, 0, 32, 64)
+		if game_manager.current_colour == "Blue":
+			sprite_2d.texture.region = Rect2(96, 0, 32, 64)
+	previous_colour = game_manager.current_colour
