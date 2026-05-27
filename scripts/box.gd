@@ -46,7 +46,7 @@ func attach_to_player():
 	if colour:
 		if previous_colour != colour and game_manager.current_colour == colour:
 			reparent(game_manager.player, true)
-		elif previous_colour == colour and not game_manager.current_colour == colour:
+		elif not game_manager.current_colour == colour:
 			reparent(game_manager.level, true) 
 	elif previous_colour != colour:
 		reparent(game_manager.level, true) 

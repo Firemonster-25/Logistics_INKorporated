@@ -4,11 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://pkkosoicnb6o" path="res://assets/test_player_colors.png" id="2_g2els"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qhqgy"]
-radius = 16.0
+radius = 15.0
 height = 62.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dqkch"]
-radius = 16.0
+radius = 15.0
 height = 62.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qhqgy"]

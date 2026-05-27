@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cxpestine1f2g"]
 
 [ext_resource type="Texture2D" uid="uid://6cxjktmte5ou" path="res://assets/test_tilemap_2.png" id="1_xnd0c"]
-[ext_resource type="PackedScene" uid="uid://dpimi4j45l1m5" path="res://scenes/hazard.tscn" id="2_qauan"]
+[ext_resource type="PackedScene" uid="uid://dpimi4j45l1m5" path="res://scenes/prefabs/hazard.tscn" id="2_qauan"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e1mau"]
 atlas = ExtResource("1_xnd0c")

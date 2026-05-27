@@ -16,6 +16,7 @@ func _ready():
 	game_manager.level = get_node(get_path())
 	game_manager.player = player
 	game_manager.current_colour = "None"
+	camera_2d.position = player.position
 
 func _physics_process(delta):
 	smooth_camera()

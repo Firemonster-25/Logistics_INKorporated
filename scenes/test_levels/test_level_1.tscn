@@ -1,8 +1,8 @@
 [gd_scene format=4 uid="uid://qbvlymrsogt7"]
 
-[ext_resource type="PackedScene" uid="uid://dbymf6c7gaj0y" path="res://scenes/level.tscn" id="1_g3t2b"]
-[ext_resource type="PackedScene" uid="uid://cxpestine1f2g" path="res://scenes/death_cube.tscn" id="2_vb4eo"]
-[ext_resource type="PackedScene" uid="uid://c2hqi1ulpjnki" path="res://scenes/exit_door.tscn" id="3_vb4eo"]
+[ext_resource type="PackedScene" uid="uid://dbymf6c7gaj0y" path="res://scenes/prefabs/level.tscn" id="1_g3t2b"]
+[ext_resource type="PackedScene" uid="uid://cxpestine1f2g" path="res://scenes/prefabs/death_cube.tscn" id="2_vb4eo"]
+[ext_resource type="PackedScene" uid="uid://c2hqi1ulpjnki" path="res://scenes/prefabs/exit_door.tscn" id="3_vb4eo"]
 
 [node name="TestLevel1" type="Node" unique_id=1096168299]
 
