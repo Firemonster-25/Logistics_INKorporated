@@ -1,6 +1,6 @@
 extends StaticBody2D
 
-@onready var collision_shape_2d = $CollisionShape2D
+@onready var collision_shape_2d = $PhasingCollider/CollisionShape2D
 
 func _physics_process(delta):
 	if Input.is_action_pressed("drop"):

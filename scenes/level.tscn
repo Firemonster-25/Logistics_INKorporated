@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://dbymf6c7gaj0y"]
 
 [ext_resource type="Script" uid="uid://cbuqjq4gbll2q" path="res://scripts/level.gd" id="1_mx8sn"]
-[ext_resource type="PackedScene" uid="uid://c4fxeiaoby2rq" path="res://scenes/prefabs/death_barrier.tscn" id="1_w8frs"]
-[ext_resource type="PackedScene" uid="uid://bdw1uarwohnlv" path="res://scenes/prefabs/player.tscn" id="2_mx8sn"]
-[ext_resource type="PackedScene" uid="uid://dmepv4gxekg0l" path="res://scenes/prefabs/test_tilemap.tscn" id="3_ppgk2"]
-[ext_resource type="PackedScene" uid="uid://ba28mcdrx30xl" path="res://scenes/prefabs/pause_menu.tscn" id="4_ppgk2"]
+[ext_resource type="PackedScene" uid="uid://c4fxeiaoby2rq" path="res://scenes/death_barrier.tscn" id="1_w8frs"]
+[ext_resource type="PackedScene" uid="uid://bdw1uarwohnlv" path="res://scenes/player.tscn" id="2_mx8sn"]
+[ext_resource type="PackedScene" uid="uid://dmepv4gxekg0l" path="res://scenes/test_tilemap.tscn" id="3_ppgk2"]
+[ext_resource type="PackedScene" uid="uid://ba28mcdrx30xl" path="res://scenes/pause_menu.tscn" id="4_ppgk2"]
 
 [node name="Level" type="Node2D" unique_id=1421595572]
 script = ExtResource("1_mx8sn")
@@ -20,6 +20,18 @@ position_smoothing_speed = 3.0
 
 [node name="PauseMenu" parent="Camera2D" unique_id=1233541783 instance=ExtResource("4_ppgk2")]
 use_top_left = true
+
+[node name="LevelIDDisplay" type="Label" parent="Camera2D" unique_id=1507943637]
+z_index = 2
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -256.0
+offset_top = 120.0
+offset_right = -72.0
+offset_bottom = 143.0
+grow_vertical = 0
+size_flags_vertical = 1
 
 [node name="TestTilemap" parent="." unique_id=797331556 instance=ExtResource("3_ppgk2")]
 

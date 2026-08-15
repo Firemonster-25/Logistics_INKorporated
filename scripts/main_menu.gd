@@ -1,8 +1,8 @@
 extends Control
 
-@onready var level_selection = $VBoxContainer/HBoxContainer/LevelSelection
+@onready var level_selection = $HBoxContainer/VBoxContainer/HBoxContainer/LevelSelection
 
-var first_level = "res://scenes/test_level_1.tscn"
+var first_level = "res://scenes/playtest_1/tutorial_basics.tscn"
 
 func _on_start_pressed():
 	get_tree().change_scene_to_file(first_level)

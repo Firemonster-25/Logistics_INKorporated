@@ -38,7 +38,7 @@ func apply_gravity(delta):
 	if not is_on_floor():
 		# Extend height of jump if input is held
 		if Input.is_action_pressed("jump") and velocity.y <= 0:
-			velocity += get_gravity() * delta * 0.75
+			velocity += get_gravity() * delta * 0.70
 		elif ((wall_cling_right.is_colliding() and direction > 0) or (wall_cling_left.is_colliding() and direction < 0)) and velocity.y > 0:
 			velocity += get_gravity() * delta * 0.2
 		else:

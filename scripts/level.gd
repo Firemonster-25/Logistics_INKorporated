@@ -7,11 +7,13 @@ extends Node2D
 @onready var player = $Player
 @onready var pause_menu = $PauseMenu
 @onready var camera_2d = $Camera2D
+@onready var level_id_display = $Camera2D/LevelIDDisplay
 
 var x_ratio: float
 var y_ratio: float
 func _ready():
 	game_manager.respawn_point = default_respawn_point
+	level_id_display.text = level_id
 	game_manager.next_level = next_level
 	game_manager.level = get_node(get_path())
 	game_manager.player = player

@@ -1,5 +1,6 @@
 extends Node
 
+var language: String
 var player: CharacterBody2D
 var level: Node2D
 var next_level: String

@@ -3,12 +3,19 @@ extends StaticBody2D
 @export var connected_to: String
 
 @onready var sprite_2d = $Sprite2D
+@onready var collision_shape_2d = $PhasingCollider/CollisionShape2D
 
 func _ready():
 	sprite_2d.texture = AtlasTexture.new()
 	sprite_2d.texture.atlas = load("res://assets/test_puzzle_objects.png")
 	sprite_2d.texture.region = Rect2(32, 0, 32, 32)
 	sprite_2d.texture.filter_clip = true
+
+func _physics_process(delta):
+	if Input.is_action_pressed("drop"):
+		collision_shape_2d.disabled = true
+	elif Input.is_action_just_released("drop"):
+		collision_shape_2d.disabled = false
 
 func _on_area_2d_body_entered(body):
 	game_manager.activated_buttons.append(connected_to) 

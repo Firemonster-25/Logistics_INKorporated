@@ -11,8 +11,8 @@ config_version=5
 [application]
 
 config/name="Puzzle Platformer"
-config/version="0.0.7"
-run/main_scene="uid://d0borr8rdp2gx"
+config/version="0.1"
+run/main_scene="uid://l2dnfjwj30s7"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 

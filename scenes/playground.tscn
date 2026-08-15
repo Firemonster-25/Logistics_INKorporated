@@ -1,9 +1,9 @@
 [gd_scene format=4 uid="uid://cc4ws0yjsdf3"]
 
-[ext_resource type="PackedScene" uid="uid://dbymf6c7gaj0y" path="res://scenes/prefabs/level.tscn" id="1_yy3g1"]
-[ext_resource type="PackedScene" uid="uid://cspwbm0xwnguw" path="res://scenes/prefabs/colour_pipe.tscn" id="2_cyyj0"]
-[ext_resource type="PackedScene" uid="uid://c1oavcobkgy8b" path="res://scenes/prefabs/box.tscn" id="3_5cwhu"]
-[ext_resource type="PackedScene" uid="uid://8lbbudgggcxk" path="res://scenes/prefabs/one_way_platform.tscn" id="4_v5pwt"]
+[ext_resource type="PackedScene" uid="uid://dbymf6c7gaj0y" path="res://scenes/level.tscn" id="1_yy3g1"]
+[ext_resource type="PackedScene" uid="uid://cspwbm0xwnguw" path="res://scenes/colour_pipe.tscn" id="2_cyyj0"]
+[ext_resource type="PackedScene" uid="uid://c1oavcobkgy8b" path="res://scenes/box.tscn" id="3_5cwhu"]
+[ext_resource type="PackedScene" uid="uid://8lbbudgggcxk" path="res://scenes/one_way_platform.tscn" id="4_v5pwt"]
 
 [node name="Playground" type="Node" unique_id=276749452]
 

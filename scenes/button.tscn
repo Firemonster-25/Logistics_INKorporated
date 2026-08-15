@@ -9,13 +9,13 @@ region = Rect2(32, 0, 32, 32)
 filter_clip = true
 
 [sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_3q610"]
-points = PackedVector2Array(-16, 16, -11, 11, 11, 11, 16, 16)
+points = PackedVector2Array(-18, 18, -11, 11, 11, 11, 18, 18)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i7y4x"]
 size = Vector2(24, 2)
 
 [node name="Button" type="StaticBody2D" unique_id=1701914602]
-collision_layer = 2
+collision_layer = 32
 collision_mask = 0
 script = ExtResource("1_rhj8v")
 
@@ -32,6 +32,13 @@ collision_mask = 8
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1028662564]
 position = Vector2(0, 10)
 shape = SubResource("RectangleShape2D_i7y4x")
+
+[node name="PhasingCollider" type="StaticBody2D" parent="." unique_id=860500814]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PhasingCollider" unique_id=1060635409]
+shape = SubResource("ConvexPolygonShape2D_3q610")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
