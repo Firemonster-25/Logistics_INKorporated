@@ -9,7 +9,7 @@ extends CharacterBody2D
 @onready var head_animation_player = $HeadAnimationPlayer
 
 const SPEED = 150.0
-const AIR_CONTROL = 8
+const AIR_CONTROL = 9
 const JUMP_VELOCITY = -300.0
 const FRICTION = 37.5
 const AIR_RESISTANCE = 2.5

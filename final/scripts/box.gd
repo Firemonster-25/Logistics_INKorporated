@@ -36,7 +36,7 @@ func apply_gravity(delta):
 	if not is_on_floor():
 		# Extend height of jump if input is held and is attached to the player
 		if Input.is_action_pressed("jump") and velocity.y <= 0 and attached == true:
-			velocity += get_gravity() * delta * 0.50
+			velocity += get_gravity() * delta * 0.45
 		else:
 			velocity += get_gravity() * delta
 
