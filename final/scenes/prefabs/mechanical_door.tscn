@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://b8dbfvhcet8sk"]
+
+[ext_resource type="Script" uid="uid://dgj0k1g7lwyr" path="res://final/scripts/mechanical_door.gd" id="1_nl7ro"]
+[ext_resource type="Texture2D" uid="uid://bugvy0b1v6w6f" path="res://final/assets/mechanical_door_sheet.png" id="2_6uiti"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nl7ro"]
+resource_local_to_scene = true
+atlas = ExtResource("2_6uiti")
+region = Rect2(0, 0, 32, 64)
+filter_clip = true
+
+[sub_resource type="Animation" id="Animation_6uiti"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture:region")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(0, 0, 32, 64)]
+}
+
+[sub_resource type="Animation" id="Animation_fb6a0"]
+resource_name = "open"
+length = 1.60001
+step = 0.1
+capture_included = true
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture:region")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 2,
+"values": [Rect2(0, 0, 32, 64), Rect2(32, 0, 32, 64), Rect2(64, 0, 32, 64), Rect2(96, 0, 32, 64), Rect2(0, 64, 32, 64), Rect2(32, 64, 32, 64), Rect2(64, 64, 32, 64), Rect2(96, 64, 32, 64), Rect2(0, 128, 32, 64), Rect2(32, 128, 32, 64), Rect2(64, 128, 32, 64), Rect2(96, 128, 32, 64), Rect2(0, 192, 32, 64), Rect2(32, 192, 32, 64), Rect2(64, 192, 32, 64), Rect2(96, 192, 32, 64)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2ljfl"]
+_data = {
+&"RESET": SubResource("Animation_6uiti"),
+&"open": SubResource("Animation_fb6a0")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jxtqp"]
+size = Vector2(32, 64)
+
+[node name="MechanicalDoor" type="StaticBody2D" unique_id=91917680]
+collision_mask = 0
+script = ExtResource("1_nl7ro")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=128153726]
+texture = SubResource("AtlasTexture_nl7ro")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=324734988]
+libraries/ = SubResource("AnimationLibrary_2ljfl")
+autoplay = &"RESET"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1410706080]
+shape = SubResource("RectangleShape2D_jxtqp")

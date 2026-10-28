@@ -1,0 +1,106 @@
+[gd_scene format=3 uid="uid://cm7bcctxcidn2"]
+
+[ext_resource type="Script" uid="uid://b854ti16k0dcr" path="res://final/scripts/pause_menu.gd" id="1_vmpkv"]
+[ext_resource type="Texture2D" uid="uid://dx8c0thgdwhgq" path="res://final/assets/main_menu_buttons_en.png" id="2_4bq6r"]
+[ext_resource type="Texture2D" uid="uid://cb38y4kmw50aa" path="res://final/assets/additional_buttons.png" id="3_5v1qx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5v1qx"]
+atlas = ExtResource("2_4bq6r")
+region = Rect2(128, 0, 96, 32)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rp3c1"]
+atlas = ExtResource("2_4bq6r")
+region = Rect2(128, 32, 96, 32)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4by84"]
+atlas = ExtResource("3_5v1qx")
+region = Rect2(0, 0, 96, 32)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1rtm6"]
+atlas = ExtResource("3_5v1qx")
+region = Rect2(0, 32, 96, 32)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gj8k5"]
+atlas = ExtResource("3_5v1qx")
+region = Rect2(0, 64, 128, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6jide"]
+atlas = ExtResource("3_5v1qx")
+region = Rect2(0, 96, 128, 32)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4bq6r"]
+atlas = ExtResource("2_4bq6r")
+region = Rect2(64, 0, 64, 32)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vuecx"]
+atlas = ExtResource("2_4bq6r")
+region = Rect2(64, 32, 64, 32)
+filter_clip = true
+
+[node name="PauseMenu" type="ColorRect" unique_id=994683864]
+process_mode = 3
+visible = false
+z_index = 5
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.70980394)
+script = ExtResource("1_vmpkv")
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1680892484]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=1454514691]
+layout_mode = 2
+
+[node name="Continue" type="TextureButton" parent="CenterContainer/VBoxContainer" unique_id=217490738]
+z_index = 2
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = SubResource("AtlasTexture_5v1qx")
+texture_hover = SubResource("AtlasTexture_rp3c1")
+texture_focused = SubResource("AtlasTexture_rp3c1")
+
+[node name="Restart" type="TextureButton" parent="CenterContainer/VBoxContainer" unique_id=1282286762]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = SubResource("AtlasTexture_4by84")
+texture_hover = SubResource("AtlasTexture_1rtm6")
+texture_focused = SubResource("AtlasTexture_1rtm6")
+
+[node name="MainMenu" type="TextureButton" parent="CenterContainer/VBoxContainer" unique_id=500043239]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = SubResource("AtlasTexture_gj8k5")
+texture_hover = SubResource("AtlasTexture_6jide")
+texture_focused = SubResource("AtlasTexture_6jide")
+
+[node name="Quit" type="TextureButton" parent="CenterContainer/VBoxContainer" unique_id=818862283]
+z_index = 2
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = SubResource("AtlasTexture_4bq6r")
+texture_hover = SubResource("AtlasTexture_vuecx")
+texture_focused = SubResource("AtlasTexture_vuecx")
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/MainMenu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

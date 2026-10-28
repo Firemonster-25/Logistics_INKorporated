@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bfw5ummftja7v"]
+
+[ext_resource type="PackedScene" uid="uid://hgrlr7ejruhc" path="res://final/scenes/prefabs/cutscene.tscn" id="1_pn6ub"]
+
+[node name="Intro" type="Node" unique_id=138335083]
+
+[node name="Cutscene" parent="." unique_id=1309152825 instance=ExtResource("1_pn6ub")]
+next_level = "res://final/scenes/levels/tutorial.tscn"
+
+[node name="Label" parent="Cutscene/ColorRect" parent_id_path=PackedInt32Array(1309152825, 1508798167) index="0" unique_id=1959048286]
+text = "You have been hired as a robot operator at Logistics INKorporated.
+
+However,
+before you can start working for us,
+you must complete employee training.
+
+Good luck!"
+
+[editable path="Cutscene"]

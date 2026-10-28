@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://blxp23b0ct8tj"]
+
+[ext_resource type="Script" uid="uid://djp76iyk4lbrn" path="res://final/scripts/checkpoint_elevator.gd" id="1_v7dw8"]
+[ext_resource type="Texture2D" uid="uid://dvdqk2tk1y82c" path="res://final/assets/exit_elevator.png" id="2_mf0gy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nct6t"]
+atlas = ExtResource("2_mf0gy")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qgu0q"]
+size = Vector2(64, 64)
+
+[node name="CheckpointElevator" type="Area2D" unique_id=2004289251]
+z_index = -2
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_v7dw8")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1812649163]
+modulate = Color(0.20152658, 0.20152658, 0.20152658, 1)
+texture = SubResource("AtlasTexture_nct6t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=183721411]
+shape = SubResource("RectangleShape2D_qgu0q")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

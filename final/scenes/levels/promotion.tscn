@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bsp83swjksgy8"]
+
+[ext_resource type="PackedScene" uid="uid://hgrlr7ejruhc" path="res://final/scenes/prefabs/cutscene.tscn" id="1_mxqch"]
+
+[node name="Promotion" type="Node" unique_id=743967463]
+
+[node name="Cutscene" parent="." unique_id=1309152825 instance=ExtResource("1_mxqch")]
+next_level = "res://final/scenes/levels/tutorial_paint.tscn"
+
+[node name="Label" parent="Cutscene/ColorRect" parent_id_path=PackedInt32Array(1309152825, 1508798167) index="0" unique_id=1959048286]
+text = "Congratulations!
+
+You have been promoted.
+
+From now on
+you are authorised to
+use experimental INK equipment."
+
+[editable path="Cutscene"]

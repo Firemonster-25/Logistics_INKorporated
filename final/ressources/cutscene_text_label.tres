@@ -1,0 +1,7 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://c6thebqgklq04"]
+
+[ext_resource type="FontFile" uid="uid://b2ofcgmp22lm" path="res://final/ressources/IMPACT.TTF" id="1_38qtj"]
+
+[resource]
+font = ExtResource("1_38qtj")
+font_size = 32

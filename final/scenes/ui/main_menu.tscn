@@ -1,0 +1,346 @@
+[gd_scene format=4 uid="uid://cvujx7lowhqaf"]
+
+[ext_resource type="Texture2D" uid="uid://dvfwmou2a58v0" path="res://final/assets/logo.png" id="1_0bwd6"]
+[ext_resource type="Script" uid="uid://bdvlqhehwnlrn" path="res://final/scripts/main_menu.gd" id="1_bbmhr"]
+[ext_resource type="Texture2D" uid="uid://dx8c0thgdwhgq" path="res://final/assets/main_menu_buttons_en.png" id="1_hc054"]
+[ext_resource type="Texture2D" uid="uid://bng46l3p4jdv0" path="res://final/assets/menu_button_rect.png" id="3_b45i6"]
+[ext_resource type="Script" uid="uid://dqv0qx64mct8h" path="res://final/scripts/box_spawner.gd" id="3_rcsgx"]
+[ext_resource type="PackedScene" uid="uid://bnjl68dbltp2l" path="res://final/scenes/prefabs/tilemap.tscn" id="4_0ivoc"]
+[ext_resource type="PackedScene" uid="uid://khumayan4qn2" path="res://final/scenes/ui/level_button.tscn" id="5_8koyd"]
+[ext_resource type="LabelSettings" uid="uid://c3vaottoty7y0" path="res://final/ressources/option_label.tres" id="5_43fi2"]
+[ext_resource type="Texture2D" uid="uid://cb38y4kmw50aa" path="res://final/assets/additional_buttons.png" id="5_mxt6b"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qgd3c"]
+atlas = ExtResource("1_hc054")
+region = Rect2(128, 0, 96, 32)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_158gx"]
+atlas = ExtResource("1_hc054")
+region = Rect2(128, 32, 96, 32)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0bwd6"]
+atlas = ExtResource("1_hc054")
+region = Rect2(0, 0, 64, 32)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bbmhr"]
+atlas = ExtResource("1_hc054")
+region = Rect2(0, 32, 64, 32)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hc054"]
+atlas = ExtResource("1_hc054")
+region = Rect2(0, 64, 128, 32)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ivoc"]
+atlas = ExtResource("1_hc054")
+region = Rect2(0, 96, 128, 32)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rcsgx"]
+atlas = ExtResource("1_hc054")
+region = Rect2(128, 64, 96, 32)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b45i6"]
+atlas = ExtResource("1_hc054")
+region = Rect2(128, 96, 96, 32)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_43fi2"]
+atlas = ExtResource("1_hc054")
+region = Rect2(64, 0, 64, 32)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mxt6b"]
+atlas = ExtResource("1_hc054")
+region = Rect2(64, 32, 64, 32)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8koyd"]
+atlas = ExtResource("5_mxt6b")
+region = Rect2(96, 0, 32, 32)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lmcmq"]
+atlas = ExtResource("5_mxt6b")
+region = Rect2(96, 32, 32, 32)
+filter_clip = true
+
+[node name="MainMenu" type="Camera2D" unique_id=1076133394]
+zoom = Vector2(6, 6)
+script = ExtResource("1_bbmhr")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1953486819]
+offset_left = -300.0
+offset_top = -160.0
+offset_bottom = -64.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_0bwd6")
+
+[node name="English" type="VBoxContainer" parent="." unique_id=1632025335]
+anchors_preset = -1
+anchor_right = 1.9
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -25.0
+offset_bottom = 115.0
+grow_vertical = 2
+alignment = 1
+
+[node name="Continue" type="TextureButton" parent="English" unique_id=2086487047]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture_normal = SubResource("AtlasTexture_qgd3c")
+texture_hover = SubResource("AtlasTexture_158gx")
+texture_focused = SubResource("AtlasTexture_158gx")
+
+[node name="Start" type="TextureButton" parent="English" unique_id=889830877]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture_normal = SubResource("AtlasTexture_0bwd6")
+texture_hover = SubResource("AtlasTexture_bbmhr")
+texture_focused = SubResource("AtlasTexture_bbmhr")
+
+[node name="SelectLevel" type="TextureButton" parent="English" unique_id=554758759]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture_normal = SubResource("AtlasTexture_hc054")
+texture_hover = SubResource("AtlasTexture_0ivoc")
+texture_focused = SubResource("AtlasTexture_0ivoc")
+stretch_mode = 3
+
+[node name="Options" type="TextureButton" parent="English" unique_id=1467334926]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture_normal = SubResource("AtlasTexture_rcsgx")
+texture_hover = SubResource("AtlasTexture_b45i6")
+texture_focused = SubResource("AtlasTexture_b45i6")
+stretch_mode = 3
+
+[node name="Quit" type="TextureButton" parent="English" unique_id=997739081]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture_normal = SubResource("AtlasTexture_43fi2")
+texture_hover = SubResource("AtlasTexture_mxt6b")
+texture_focused = SubResource("AtlasTexture_mxt6b")
+stretch_mode = 3
+
+[node name="LevelSelect" type="NinePatchRect" parent="." unique_id=1240652186]
+visible = false
+custom_minimum_size = Vector2(300, 200)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -6.0
+offset_top = -6.0
+offset_right = 6.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("3_b45i6")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="GridContainer" type="GridContainer" parent="LevelSelect" unique_id=96890175]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 6
+
+[node name="1" parent="LevelSelect/GridContainer" unique_id=1627271263 instance=ExtResource("5_8koyd")]
+layout_mode = 2
+
+[node name="2" parent="LevelSelect/GridContainer" unique_id=1275645228 instance=ExtResource("5_8koyd")]
+layout_mode = 2
+
+[node name="3" parent="LevelSelect/GridContainer" unique_id=366779631 instance=ExtResource("5_8koyd")]
+layout_mode = 2
+
+[node name="4" parent="LevelSelect/GridContainer" unique_id=795939483 instance=ExtResource("5_8koyd")]
+layout_mode = 2
+
+[node name="5" parent="LevelSelect/GridContainer" unique_id=1254908489 instance=ExtResource("5_8koyd")]
+layout_mode = 2
+
+[node name="6" parent="LevelSelect/GridContainer" unique_id=1597349414 instance=ExtResource("5_8koyd")]
+layout_mode = 2
+
+[node name="7" parent="LevelSelect/GridContainer" unique_id=1185328223 instance=ExtResource("5_8koyd")]
+layout_mode = 2
+
+[node name="8" parent="LevelSelect/GridContainer" unique_id=989886436 instance=ExtResource("5_8koyd")]
+layout_mode = 2
+
+[node name="9" parent="LevelSelect/GridContainer" unique_id=1891063447 instance=ExtResource("5_8koyd")]
+layout_mode = 2
+
+[node name="10" parent="LevelSelect/GridContainer" unique_id=1055633160 instance=ExtResource("5_8koyd")]
+layout_mode = 2
+
+[node name="11" parent="LevelSelect/GridContainer" unique_id=1674356922 instance=ExtResource("5_8koyd")]
+layout_mode = 2
+
+[node name="12" parent="LevelSelect/GridContainer" unique_id=406479619 instance=ExtResource("5_8koyd")]
+layout_mode = 2
+
+[node name="13" parent="LevelSelect/GridContainer" unique_id=359310246 instance=ExtResource("5_8koyd")]
+layout_mode = 2
+
+[node name="14" parent="LevelSelect/GridContainer" unique_id=1387340848 instance=ExtResource("5_8koyd")]
+layout_mode = 2
+
+[node name="15" parent="LevelSelect/GridContainer" unique_id=792132141 instance=ExtResource("5_8koyd")]
+layout_mode = 2
+
+[node name="16" parent="LevelSelect/GridContainer" unique_id=1637926584 instance=ExtResource("5_8koyd")]
+layout_mode = 2
+
+[node name="17" parent="LevelSelect/GridContainer" unique_id=1155732982 instance=ExtResource("5_8koyd")]
+layout_mode = 2
+
+[node name="18" parent="LevelSelect/GridContainer" unique_id=1322128336 instance=ExtResource("5_8koyd")]
+layout_mode = 2
+
+[node name="Close" type="TextureButton" parent="LevelSelect" unique_id=634771926]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 1
+anchors_preset = -1
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = SubResource("AtlasTexture_8koyd")
+texture_hover = SubResource("AtlasTexture_lmcmq")
+texture_focused = SubResource("AtlasTexture_lmcmq")
+
+[node name="OptionMenu" type="NinePatchRect" parent="." unique_id=1857434106]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -100.0
+offset_right = 150.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_b45i6")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="OptionMenu" unique_id=632143532]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="OptionMenu/VBoxContainer" unique_id=318336481]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="OptionMenu/VBoxContainer/HBoxContainer" unique_id=76935218]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Music"
+label_settings = ExtResource("5_43fi2")
+
+[node name="Music" type="HSlider" parent="OptionMenu/VBoxContainer/HBoxContainer" unique_id=623625793]
+texture_filter = 1
+custom_minimum_size = Vector2(200, 16)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+value = 100.0
+tick_count = 11
+ticks_position = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="OptionMenu/VBoxContainer" unique_id=1235069301]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="OptionMenu/VBoxContainer/HBoxContainer2" unique_id=1465573731]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Effects"
+label_settings = ExtResource("5_43fi2")
+
+[node name="Effects" type="HSlider" parent="OptionMenu/VBoxContainer/HBoxContainer2" unique_id=718458700]
+texture_filter = 1
+custom_minimum_size = Vector2(200, 16)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+value = 100.0
+tick_count = 11
+ticks_position = 1
+
+[node name="Close" type="TextureButton" parent="OptionMenu" unique_id=26798044]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 1
+anchors_preset = -1
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = SubResource("AtlasTexture_8koyd")
+texture_hover = SubResource("AtlasTexture_lmcmq")
+texture_focused = SubResource("AtlasTexture_lmcmq")
+
+[node name="Tilemap" parent="." unique_id=1865525613 instance=ExtResource("4_0ivoc")]
+tile_map_data = PackedByteArray("AAAXAA4AAAACAAIAAAAXAA0AAAACAAEAAAAXAAwAAAACAAEAAAAWAA4AAAABAAIAAAAWAA0AAAABAAEAAAAWAAwAAAABAAEAAAAVAA4AAAABAAIAAAAVAA0AAAABAAEAAAAVAAwAAAABAAAAAAAUAA4AAAABAAIAAAAUAA0AAAABAAEAAAAUAAwAAAABAAAAAAATAA4AAAABAAIAAAATAA0AAAABAAEAAAATAAwAAAABAAAAAAASAA4AAAABAAIAAAASAA0AAAABAAEAAAASAAwAAAABAAAAAAARAA4AAAABAAIAAAARAA0AAAABAAEAAAARAAwAAAABAAAAAAAQAA4AAAABAAIAAAAQAA0AAAABAAEAAAAQAAwAAAABAAAAAAAPAA4AAAABAAIAAAAPAA0AAAABAAEAAAAPAAwAAAABAAAAAAAOAA4AAAABAAIAAAAOAA0AAAABAAEAAAAOAAwAAAABAAAAAAANAA4AAAABAAIAAAANAA0AAAABAAEAAAANAAwAAAABAAAAAAAMAA4AAAABAAIAAAAMAA0AAAABAAEAAAAMAAwAAAABAAAAAAALAA4AAAABAAIAAAALAA0AAAABAAEAAAALAAwAAAABAAAAAAAKAA4AAAABAAIAAAAKAA0AAAABAAEAAAAKAAwAAAABAAAAAAAJAA4AAAABAAIAAAAJAA0AAAABAAEAAAAJAAwAAAABAAAAAAAIAA4AAAABAAIAAAAIAA0AAAABAAEAAAAIAAwAAAABAAAAAAAHAA4AAAABAAIAAAAHAA0AAAABAAEAAAAHAAwAAAABAAAAAAAGAA4AAAABAAIAAAAGAA0AAAABAAEAAAAGAAwAAAABAAAAAAAFAA4AAAABAAIAAAAFAA0AAAABAAEAAAAFAAwAAAABAAAAAAAEAA4AAAABAAIAAAAEAA0AAAABAAEAAAAEAAwAAAABAAAAAAADAA4AAAABAAIAAAADAA0AAAABAAEAAAADAAwAAAABAAAAAAACAA4AAAABAAIAAAACAA0AAAABAAEAAAACAAwAAAABAAAAAAABAA4AAAABAAIAAAABAA0AAAABAAEAAAABAAwAAAABAAAAAAAAAA4AAAABAAIAAAAAAA0AAAABAAEAAAAAAAwAAAABAAAAAAD//w4AAAABAAIAAAD//w0AAAABAAEAAAD//wwAAAABAAAAAAD+/w4AAAABAAIAAAD+/w0AAAABAAEAAAD+/wwAAAABAAAAAAD9/w4AAAABAAIAAAD9/w0AAAABAAEAAAD9/wwAAAABAAAAAAD8/w4AAAABAAIAAAD8/w0AAAABAAEAAAD8/wwAAAABAAAAAAD7/w4AAAABAAIAAAD7/w0AAAABAAEAAAD7/wwAAAABAAAAAAD6/w4AAAABAAIAAAD6/w0AAAABAAEAAAD6/wwAAAABAAAAAAD5/w4AAAABAAIAAAD5/w0AAAABAAEAAAD5/wwAAAABAAAAAAD4/w4AAAABAAIAAAD4/w0AAAABAAEAAAD4/wwAAAABAAAAAAD3/w4AAAABAAIAAAD3/w0AAAABAAEAAAD3/wwAAAABAAAAAAD2/w4AAAABAAIAAAD2/w0AAAABAAEAAAD2/wwAAAABAAAAAAD1/w4AAAABAAIAAAD1/w0AAAABAAEAAAD1/wwAAAABAAAAAAD0/w4AAAABAAIAAAD0/w0AAAABAAEAAAD0/wwAAAABAAAAAADz/w4AAAABAAIAAADz/w0AAAABAAEAAADz/wwAAAABAAAAAADy/w4AAAABAAIAAADy/w0AAAABAAEAAADy/wwAAAABAAAAAADx/w4AAAABAAIAAADx/w0AAAABAAEAAADx/wwAAAABAAAAAADw/w4AAAABAAIAAADw/w0AAAABAAEAAADw/wwAAAABAAAAAADv/w4AAAABAAIAAADv/w0AAAABAAEAAADv/wwAAAABAAAAAADu/w4AAAABAAIAAADu/w0AAAABAAEAAADu/wwAAAABAAAAAADt/w4AAAABAAIAAADt/w0AAAABAAEAAADt/wwAAAABAAAAAADs/w4AAAABAAIAAADs/w0AAAABAAEAAADs/wwAAAABAAAAAADr/w4AAAABAAIAAADr/w0AAAABAAEAAADr/wwAAAABAAAAAADq/w4AAAABAAIAAADq/w0AAAABAAEAAADq/wwAAAABAAAAAADp/w4AAAABAAIAAADp/w0AAAABAAEAAADp/wwAAAABAAEAAADo/w4AAAAAAAIAAADo/w0AAAAAAAEAAADo/wwAAAAAAAEAAADo/wsAAAAAAAEAAADo/woAAAAAAAEAAADo/wkAAAAAAAEAAADo/wgAAAAAAAEAAADo/wcAAAAAAAEAAADo/wYAAAAAAAEAAADo/wUAAAAAAAEAAADo/wQAAAAAAAEAAADo/wMAAAAAAAEAAADo/wIAAAAAAAEAAADo/wEAAAAAAAEAAADo/wAAAAAAAAEAAADo////AAAAAAEAAADo//7/AAAAAAEAAADo//3/AAAAAAEAAADo//z/AAAAAAEAAADo//v/AAAAAAEAAADo//r/AAAAAAEAAADo//n/AAAAAAEAAADo//j/AAAAAAEAAADo//f/AAAAAAEAAADo//b/AAAAAAEAAADo//X/AAAAAAAAAADp/wsAAAACAAEAAADp/woAAAACAAEAAADp/wkAAAACAAEAAADp/wgAAAACAAEAAADp/wcAAAACAAEAAADp/wYAAAACAAEAAADp/wUAAAACAAEAAADp/wQAAAACAAEAAADp/wMAAAACAAEAAADp/wIAAAACAAEAAADp/wEAAAACAAEAAADp/wAAAAACAAEAAADp////AAACAAEAAADp//7/AAACAAEAAADp//3/AAACAAEAAADp//z/AAACAAEAAADp//v/AAACAAEAAADp//r/AAACAAEAAADp//n/AAACAAEAAADp//j/AAACAAEAAADp//f/AAACAAEAAADp//b/AAACAAEAAADp//X/AAACAAAAAAAXAAsAAAACAAEAAAAXAAoAAAACAAEAAAAXAAkAAAACAAEAAAAXAAgAAAACAAEAAAAXAAcAAAACAAEAAAAXAAYAAAACAAEAAAAXAAUAAAACAAEAAAAXAAQAAAACAAEAAAAXAAMAAAACAAEAAAAXAAIAAAACAAEAAAAXAAEAAAACAAEAAAAXAAAAAAACAAEAAAAXAP//AAACAAEAAAAXAP7/AAACAAEAAAAXAP3/AAACAAEAAAAXAPz/AAACAAEAAAAXAPv/AAACAAEAAAAXAPr/AAACAAEAAAAXAPn/AAACAAEAAAAXAPj/AAACAAEAAAAXAPf/AAACAAEAAAAXAPb/AAACAAEAAAAXAPX/AAACAAAAAAAWAAUAAAAAAAEAAAAWAAQAAAAAAAEAAAAWAAMAAAAAAAEAAAAWAAIAAAAAAAEAAAAWAAEAAAAAAAEAAAAWAAAAAAAAAAEAAAAWAP//AAAAAAEAAAAWAP7/AAAAAAEAAAAWAP3/AAAAAAEAAAAWAPz/AAAAAAEAAAAWAPv/AAAAAAEAAAAWAPr/AAAAAAEAAAAWAPn/AAAAAAEAAAAWAPj/AAAAAAEAAAAWAPf/AAAAAAEAAAAWAPb/AAAAAAEAAAAWAPX/AAAAAAAAAAAWAAsAAAAAAAEAAAAWAAoAAAAAAAEAAAAWAAkAAAAAAAEAAAAWAAgAAAAAAAEAAAAWAAcAAAAAAAEAAAAWAAYAAAAAAAEAAAA=")
+
+[node name="BoxContainer" type="Node2D" parent="." unique_id=1827491992]
+
+[node name="BoxSpawner" type="Node2D" parent="BoxContainer" unique_id=998594046]
+position = Vector2(0, -225)
+script = ExtResource("3_rcsgx")
+
+[node name="Timer" type="Timer" parent="BoxContainer/BoxSpawner" unique_id=1946992654]
+autostart = true
+
+[connection signal="pressed" from="English/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="English/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="English/SelectLevel" to="." method="_on_select_level_pressed"]
+[connection signal="pressed" from="English/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="English/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="LevelSelect/Close" to="." method="_on_close_pressed"]
+[connection signal="pressed" from="OptionMenu/Close" to="." method="_on_close_pressed"]
+[connection signal="timeout" from="BoxContainer/BoxSpawner/Timer" to="BoxContainer/BoxSpawner" method="_on_timer_timeout"]

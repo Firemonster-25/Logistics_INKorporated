@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://cwxpvuxs74anq"]
+
+[ext_resource type="Script" uid="uid://g0bvr2f1oyfk" path="res://final/scripts/color_pipe.gd" id="1_4hogt"]
+[ext_resource type="Texture2D" uid="uid://hbtylsvjdgcv" path="res://final/assets/color_pipes.png" id="2_8xaam"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cpeae"]
+resource_local_to_scene = true
+atlas = ExtResource("2_8xaam")
+region = Rect2(0, 0, 32, 96)
+filter_clip = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ueme"]
+size = Vector2(24, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nm8rb"]
+size = Vector2(32, 16)
+
+[node name="ColorPipe" type="Area2D" unique_id=82613034]
+collision_layer = 16
+collision_mask = 2
+script = ExtResource("1_4hogt")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1271776488]
+texture = SubResource("AtlasTexture_cpeae")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1573880064]
+shape = SubResource("RectangleShape2D_5ueme")
+debug_color = Color(5.631298e-06, 0.7366207, 0.20238811, 0.41960785)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=729706786]
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=799780912]
+position = Vector2(0, -40)
+shape = SubResource("RectangleShape2D_nm8rb")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=666178833]
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1722647732]
+position = Vector2(0, 40)
+shape = SubResource("RectangleShape2D_nm8rb")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

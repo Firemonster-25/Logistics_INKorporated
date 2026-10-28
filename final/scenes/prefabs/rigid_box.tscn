@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://sotp8wvvb35c"]
+
+[ext_resource type="Script" uid="uid://b3r280je0r66o" path="res://final/scripts/rigid_box.gd" id="1_cb7dv"]
+[ext_resource type="Texture2D" uid="uid://bhawlou0qxkxx" path="res://final/assets/boxes.png" id="2_7h868"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g5juo"]
+resource_local_to_scene = true
+atlas = ExtResource("2_7h868")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ofvin"]
+size = Vector2(32, 32)
+
+[node name="RigidBox" type="RigidBody2D" unique_id=1268021006]
+z_index = -1
+continuous_cd = 1
+script = ExtResource("1_cb7dv")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=630446920]
+texture = SubResource("AtlasTexture_g5juo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=37622446]
+shape = SubResource("RectangleShape2D_ofvin")

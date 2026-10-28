@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bodne82gu214x"]
+
+[ext_resource type="Script" uid="uid://da7dv1o0mnv48" path="res://final/scripts/entry_elevator.gd" id="1_3phum"]
+[ext_resource type="Texture2D" uid="uid://dvdqk2tk1y82c" path="res://final/assets/exit_elevator.png" id="2_wcdhk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_of5y1"]
+atlas = ExtResource("2_wcdhk")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vsdte"]
+size = Vector2(64, 64)
+
+[node name="EntryElevator" type="Area2D" unique_id=1305365920]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_3phum")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=331127594]
+modulate = Color(0.20152658, 0.20152658, 0.20152658, 1)
+texture = SubResource("AtlasTexture_of5y1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1266334869]
+shape = SubResource("RectangleShape2D_vsdte")

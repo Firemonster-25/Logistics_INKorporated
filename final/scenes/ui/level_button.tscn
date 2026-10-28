@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://khumayan4qn2"]
+
+[ext_resource type="Texture2D" uid="uid://cg2rej1asrm32" path="res://final/assets/level_select_buttons.png" id="1_nbdp1"]
+[ext_resource type="Script" uid="uid://dfiap0ausijr5" path="res://final/scripts/level_button.gd" id="2_ndde2"]
+[ext_resource type="LabelSettings" uid="uid://mktj0gwxblb2" path="res://final/ressources/level_select_label.tres" id="3_j5ypi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qgd3c"]
+atlas = ExtResource("1_nbdp1")
+region = Rect2(0, 0, 32, 32)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_158gx"]
+atlas = ExtResource("1_nbdp1")
+region = Rect2(32, 0, 32, 32)
+filter_clip = true
+
+[node name="LevelButton" type="TextureButton" unique_id=1627271263]
+visible = false
+texture_normal = SubResource("AtlasTexture_qgd3c")
+texture_hover = SubResource("AtlasTexture_158gx")
+texture_focused = SubResource("AtlasTexture_158gx")
+script = ExtResource("2_ndde2")
+
+[node name="Label" type="Label" parent="." unique_id=1698215751]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+label_settings = ExtResource("3_j5ypi")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

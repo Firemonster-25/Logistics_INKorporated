@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://rh26cqsv1qhv"]
+
+[ext_resource type="PackedScene" uid="uid://hgrlr7ejruhc" path="res://final/scenes/prefabs/cutscene.tscn" id="1_ja0xv"]
+
+[node name="Credits" type="Node" unique_id=1408916320]
+
+[node name="Cutscene" parent="." unique_id=1309152825 instance=ExtResource("1_ja0xv")]
+next_level = "res://final/scenes/ui/main_menu.tscn"
+
+[node name="Label" parent="Cutscene/ColorRect" parent_id_path=PackedInt32Array(1309152825, 1508798167) index="0" unique_id=1959048286]
+text = "THE END
+
+Developed by:
+Samuel Kässmeyer
+
+Thanks for playing!"
+
+[editable path="Cutscene"]

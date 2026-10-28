@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://l8x4ocalnx03"]
+
+[ext_resource type="Script" uid="uid://be0oy7he7mfdi" path="res://final/scripts/box.gd" id="1_hwwri"]
+[ext_resource type="Texture2D" uid="uid://bhawlou0qxkxx" path="res://final/assets/boxes.png" id="2_a8jyy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b7ib4"]
+resource_local_to_scene = true
+atlas = ExtResource("2_a8jyy")
+region = Rect2(0, 0, 32, 32)
+filter_clip = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o5usf"]
+size = Vector2(32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aij71"]
+size = Vector2(4, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e1vew"]
+size = Vector2(32, 32)
+
+[node name="Box" type="CharacterBody2D" unique_id=846526634]
+collision_layer = 8
+collision_mask = 75
+collision_priority = 0.5
+script = ExtResource("1_hwwri")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=584647719]
+texture = SubResource("AtlasTexture_b7ib4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2086478810]
+shape = SubResource("RectangleShape2D_o5usf")
+
+[node name="PushRight" type="Area2D" parent="." unique_id=1637167765]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PushRight" unique_id=289928601]
+position = Vector2(-18, 1)
+shape = SubResource("RectangleShape2D_aij71")
+
+[node name="PushLeft" type="Area2D" parent="." unique_id=2080307659]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PushLeft" unique_id=1714791458]
+position = Vector2(18, 1)
+shape = SubResource("RectangleShape2D_aij71")
+
+[node name="ColorDetector" type="Area2D" parent="." unique_id=1635547631]
+collision_layer = 0
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorDetector" unique_id=1043735486]
+shape = SubResource("RectangleShape2D_e1vew")
+
+[connection signal="body_entered" from="PushRight" to="." method="_on_push_right_body_entered"]
+[connection signal="body_exited" from="PushRight" to="." method="_on_push_right_body_exited"]
+[connection signal="body_entered" from="PushLeft" to="." method="_on_push_left_body_entered"]
+[connection signal="body_exited" from="PushLeft" to="." method="_on_push_left_body_exited"]
+[connection signal="area_entered" from="ColorDetector" to="." method="_on_color_detector_area_entered"]

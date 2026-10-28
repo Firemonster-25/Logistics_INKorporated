@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://ccss62ihly1jp"]
+
+[ext_resource type="Script" uid="uid://be0c07yu40sql" path="res://final/scripts/exit_elevator.gd" id="1_kogi3"]
+[ext_resource type="Texture2D" uid="uid://dvdqk2tk1y82c" path="res://final/assets/exit_elevator.png" id="2_6limj"]
+[ext_resource type="PackedScene" uid="uid://cn0m7s1t7b4rt" path="res://final/scenes/ui/button_prompt.tscn" id="3_2vxg8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kogi3"]
+size = Vector2(80, 64)
+
+[node name="ExitElevator" type="Area2D" unique_id=963446371]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_kogi3")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1034595816]
+texture = ExtResource("2_6limj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1556062533]
+shape = SubResource("RectangleShape2D_kogi3")
+
+[node name="ButtonPrompt" parent="." unique_id=11216777 instance=ExtResource("3_2vxg8")]
+visible = false
+offset_left = -16.0
+offset_top = -56.0
+offset_right = 0.0
+offset_bottom = -40.0
+text = "E"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

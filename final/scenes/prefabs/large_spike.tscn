@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://pftd31twjqvt"]
+
+[ext_resource type="Texture2D" uid="uid://cfs6x2w1qerid" path="res://final/assets/spikes.png" id="1_1bru5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_auil8"]
+atlas = ExtResource("1_1bru5")
+region = Rect2(16, 0, 32, 32)
+filter_clip = true
+
+[node name="LargeSpike" type="Area2D" unique_id=1693821232]
+collision_layer = 4
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=863295027]
+z_index = 1
+texture = SubResource("AtlasTexture_auil8")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1844200658]
+polygon = PackedVector2Array(0, -16, 16, 16, -16, 16)

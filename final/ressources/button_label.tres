@@ -1,0 +1,10 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://dxel12qxfkssr"]
+
+[ext_resource type="FontFile" uid="uid://b2ofcgmp22lm" path="res://final/ressources/IMPACT.TTF" id="1_0rrpb"]
+
+[resource]
+font = ExtResource("1_0rrpb")
+font_size = 14
+font_color = Color(0.09411765, 0.078431375, 0.14509805, 1)
+outline_color = Color(1, 1, 1, 0)
+shadow_size = 0

@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://cn0m7s1t7b4rt"]
+
+[ext_resource type="Texture2D" uid="uid://cavp30v55ckvs" path="res://final/assets/button_rect.png" id="1_83ddx"]
+[ext_resource type="LabelSettings" uid="uid://dxel12qxfkssr" path="res://final/ressources/button_label.tres" id="1_s02ae"]
+
+[node name="ButtonPrompt" type="Label" unique_id=11216777]
+z_index = 2
+offset_right = 16.0
+offset_bottom = 16.0
+label_settings = ExtResource("1_s02ae")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=1367437759]
+z_index = -1
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_83ddx")

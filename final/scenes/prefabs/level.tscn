@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://dm4hfqdnfp2oo"]
+
+[ext_resource type="Script" uid="uid://yerjyu7gk8cp" path="res://final/scripts/level.gd" id="1_y4eym"]
+[ext_resource type="PackedScene" uid="uid://2urdxv5qbpl2" path="res://final/scenes/prefabs/player.tscn" id="2_54gdw"]
+[ext_resource type="PackedScene" uid="uid://cm7bcctxcidn2" path="res://final/scenes/ui/pause_menu.tscn" id="2_far60"]
+[ext_resource type="PackedScene" uid="uid://bnjl68dbltp2l" path="res://final/scenes/prefabs/tilemap.tscn" id="3_far60"]
+[ext_resource type="PackedScene" uid="uid://bodne82gu214x" path="res://final/scenes/prefabs/entry_elevator.tscn" id="4_rs48g"]
+[ext_resource type="PackedScene" uid="uid://ccss62ihly1jp" path="res://final/scenes/prefabs/exit_elevator.tscn" id="5_t0t61"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_54gdw"]
+
+[node name="Level" type="Node2D" unique_id=1058010193]
+script = ExtResource("1_y4eym")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1799958228]
+zoom = Vector2(6, 6)
+
+[node name="PauseMenu" parent="Camera2D" unique_id=26663286 instance=ExtResource("2_far60")]
+
+[node name="Player" parent="." unique_id=1034434987 instance=ExtResource("2_54gdw")]
+
+[node name="Environment" type="Node" parent="." unique_id=834523519]
+
+[node name="Tilemap" parent="Environment" unique_id=1865525613 instance=ExtResource("3_far60")]
+
+[node name="Deathbarrier" type="Area2D" parent="Environment" unique_id=268227490]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Deathbarrier" unique_id=562741730]
+position = Vector2(0, 256)
+shape = SubResource("WorldBoundaryShape2D_54gdw")
+debug_color = Color(0.44704843, 0, 0.19228894, 0.41960785)
+
+[node name="EntryElevator" parent="Environment" unique_id=1305365920 instance=ExtResource("4_rs48g")]
+z_index = -2
+
+[node name="ExitElevator" parent="Environment" unique_id=963446371 instance=ExtResource("5_t0t61")]
+z_index = -2
+position = Vector2(88, 0)
+
+[node name="Hazards" type="Node" parent="Environment" unique_id=820994687]
+
+[node name="ColorPipes" type="Node" parent="Environment" unique_id=1566959551]
+
+[node name="Girders" type="Node" parent="Environment" unique_id=21952136]
+
+[node name="CheckpointElevators" type="Node" parent="Environment" unique_id=1627087739]
+
+[node name="Objects" type="Node" parent="." unique_id=1599078792]
+
+[node name="Boxes" type="Node" parent="Objects" unique_id=1967019277]
+
+[node name="PressurePlates" type="Node" parent="Objects" unique_id=267322071]
+
+[node name="MechanicalDoors" type="Node" parent="Objects" unique_id=696138284]
+
+[node name="Switches" type="Node" parent="Objects" unique_id=668131813]

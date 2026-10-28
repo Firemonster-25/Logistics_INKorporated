@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://c3rx7guktm1rl"]
+
+[ext_resource type="Script" uid="uid://ccotnbedbemun" path="res://final/scripts/pressure_plate.gd" id="1_dnn0c"]
+[ext_resource type="Texture2D" uid="uid://devisxexcbpue" path="res://final/assets/pressure_plates.png" id="2_hionk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_imjws"]
+resource_local_to_scene = true
+atlas = ExtResource("2_hionk")
+region = Rect2(0, 0, 32, 16)
+filter_clip = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ls6wv"]
+size = Vector2(32, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dnn0c"]
+size = Vector2(32, 2)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hionk"]
+size = Vector2(32, 14)
+
+[node name="PressurePlate" type="StaticBody2D" unique_id=1701914602]
+collision_layer = 32
+collision_mask = 0
+script = ExtResource("1_dnn0c")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1497983462]
+texture = SubResource("AtlasTexture_imjws")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2012352417]
+shape = SubResource("RectangleShape2D_ls6wv")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1370442447]
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2022641872]
+position = Vector2(0, -7)
+shape = SubResource("RectangleShape2D_dnn0c")
+
+[node name="BoxCollider" type="StaticBody2D" parent="." unique_id=1183797834]
+collision_layer = 64
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BoxCollider" unique_id=411145463]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_hionk")
+debug_color = Color(0.50240034, 0.15594032, 0, 0.41960785)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
